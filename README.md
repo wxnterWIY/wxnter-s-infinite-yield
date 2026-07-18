@@ -1,8 +1,5 @@
-# Infinite Yield
-
-The best command line script for roblox.
-
-[![](https://dcbadge.limes.pink/api/server/https://discord.gg/78ZuWSq)](https://discord.gg/78ZuWSq)
+# wxnter's infinite yield
+The best command line script for roblox, in my branding.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
@@ -16,6 +13,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 
 ### Creator: [Edge](https://github.com/EdgeIY)
 ### Developers: [Moon](https://github.com/LorekeeperZinnia), [Zwolf](https://github.com/luatsuki), [Hunter](https://github.com/tooslzy), [Toon](https://github.com/Toon-arch), [Peyton](https://github.com/peyton2465), [ATP](https://github.com/ionizedparticle)
+### Forker: [wxnter](https://github.com/wxnterWIY)
 
 ## Usage
 You can learn how to use all the features of this script in [the wiki](https://github.com/EdgeIY/infiniteyield/wiki)!
