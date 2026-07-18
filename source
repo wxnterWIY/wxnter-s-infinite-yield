@@ -1,5 +1,5 @@
 if IY_LOADED and not _G.IY_DEBUG then
-	-- error("Infinite Yield is already running!", 0)
+	-- error("wxnter's Infinite Yield is already running!", 0)
 	return
 end
 
@@ -285,6 +285,10 @@ scroll_3 = Instance.new("ScrollingFrame")
 listlayout = Instance.new("UIListLayout",scroll_3)
 selectChat = Instance.new("TextButton")
 selectJoin = Instance.new("TextButton")
+MainUICorner = Instance.new("UICorner")
+MainUICorner1 = Instance.new("UICorner")
+MainUICorner2 = Instance.new("UICorner")
+MainUICorner3 = Instance.new("UICorner")
 
 function randomString()
 	local length = math.random(10,20)
@@ -355,7 +359,7 @@ Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 250, 0, 20)
 Title.Font = Enum.Font.SourceSans
 Title.TextSize = 18
-Title.Text = "Infinite Yield FE v" .. currentVersion
+Title.Text = "wxnter's IY v" .. currentVersion
 
 do
 	local emoji = ({
@@ -401,6 +405,20 @@ Dark.Position = UDim2.new(0, 0, 0, 45)
 Dark.Size = UDim2.new(0, 250, 0, 175)
 Dark.ZIndex = 10
 table.insert(shade1,Dark)
+
+MainUICorner.Name = "RoundedCorner"
+MainUICorner.Parent = Title
+MainUICorner.BottomLeftRadius = UDim.new(0, 0)
+MainUICorner.BottomRightRadius = UDim.new(0, 0)
+MainUICorner.TopLeftRadius = UDim.new(0, 8)
+MainUICorner.TopRightRadius = UDim.new(0, 8)
+
+MainUICorner1.Name = "RoundedCorner"
+MainUICorner1.Parent = Holder
+MainUICorner1.BottomLeftRadius = UDim.new(0, 0)
+MainUICorner1.BottomRightRadius = UDim.new(0, 0)
+MainUICorner1.TopLeftRadius = UDim.new(0, 8)
+MainUICorner1.TopRightRadius = UDim.new(0, 8)
 
 Cmdbar.Name = "Cmdbar"
 Cmdbar.Parent = Holder
@@ -655,6 +673,21 @@ Title_2.ZIndex = 10
 table.insert(shade2,Title_2)
 table.insert(text1,Title_2)
 
+MainUICorner2.Name = "RoundedCorner"
+MainUICorner2.Parent = Title_2
+MainUICorner2.BottomLeftRadius = UDim.new(0, 0)
+MainUICorner2.BottomRightRadius = UDim.new(0, 0)
+MainUICorner2.TopLeftRadius = UDim.new(0, 8)
+MainUICorner2.TopRightRadius = UDim.new(0, 8)
+
+MainUICorner3.Name = "RoundedCorner"
+MainUICorner3.Parent = Notification
+MainUICorner3.BottomLeftRadius = UDim.new(0, 0)
+MainUICorner3.BottomRightRadius = UDim.new(0, 0)
+MainUICorner3.TopLeftRadius = UDim.new(0, 8)
+MainUICorner3.TopRightRadius = UDim.new(0, 8)
+
+
 Text_2.Name = "Text"
 Text_2.Parent = Notification
 Text_2.BackgroundTransparency = 1
@@ -768,7 +801,7 @@ Credits.Position = UDim2.new(0, 0, 0.9, 30)
 Credits.Size = UDim2.new(0, 250, 0, 20)
 Credits.Font = Enum.Font.SourceSansLight
 Credits.FontSize = Enum.FontSize.Size14
-Credits.Text = "Edge // Zwolf // Moon // Toon // Peyton // ATP"
+Credits.Text = "Infinite Yield Team // wxnter"
 Credits.TextColor3 = Color3.new(1, 1, 1)
 Credits.ZIndex = 10
 
@@ -2932,7 +2965,7 @@ defaultsettings = {
 	StayOpen = false;
 	guiScale = defaultGuiScale;
 	espTransparency = 0.3;
-	keepIY = true;
+	keepWIY = true;
 	logsEnabled = false;
 	jLogsEnabled = false;
 	aliases = {};
@@ -2954,7 +2987,7 @@ useFactorySettings = function()
 	prefix = ';'
 	StayOpen = false
 	guiScale = defaultGuiScale
-	KeepInfYield = true
+	KeepWInfYield = true
 	espTransparency = 0.3
 	logsEnabled = false
 	jLogsEnabled = false
@@ -3061,7 +3094,7 @@ function saves()
 					if vtype(json.prefix, "string") then prefix = json.prefix else prefix = ';' end
 					if vtype(json.StayOpen, "boolean") then StayOpen = json.StayOpen else StayOpen = false end
 					if vtype(json.guiScale, "number") then guiScale = json.guiScale else guiScale = defaultGuiScale end
-					if vtype(json.keepIY, "boolean") then KeepInfYield = json.keepIY else KeepInfYield = true end
+					if vtype(json.keepWIY, "boolean") then KeepWInfYield = json.keepWIY else KeepWInfYield = true end
 					if vtype(json.espTransparency, "number") then espTransparency = json.espTransparency else espTransparency = 0.3 end
 					if vtype(json.logsEnabled, "boolean") then logsEnabled = json.logsEnabled else logsEnabled = false end
 					if vtype(json.jLogsEnabled, "boolean") then jLogsEnabled = json.jLogsEnabled else jLogsEnabled = false end
@@ -3115,7 +3148,7 @@ function saves()
 		if jsonAttempts >= 10 then
 			nosaves = true
 			useFactorySettings()
-			createPopup("File Error", "Sorry, we have attempted to parse your save file, but it is unreadable!\n\nInfinite Yield is now using factory settings until your exploit's file system works.\n\nYour save file has not been deleted.")
+			createPopup("File Error", "Sorry, we have attempted to parse your save file, but it is unreadable!\n\nwxnter's IY is now using factory settings until your exploit's file system works.\n\nYour save file has not been deleted.")
 		else
 			nosaves = true
 			useFactorySettings()
@@ -3131,7 +3164,7 @@ function updatesaves()
 			prefix = prefix;
 			StayOpen = StayOpen;
 			guiScale = guiScale;
-			keepIY = KeepInfYield;
+			keepWIY = KeepWInfYield;
 			espTransparency = espTransparency;
 			logsEnabled = logsEnabled;
 			jLogsEnabled = jLogsEnabled;
@@ -4016,7 +4049,7 @@ SaveChatlogs.MouseButton1Down:Connect(function()
 		if #scroll_2:GetChildren() > 0 then
 			notify("Loading",'Hold on a sec')
 			local placeName = CleanFileName(MarketplaceService:GetProductInfo(PlaceId).Name)
-			local writelogs = '-- Infinite Yield Chat logs for "'..placeName..'"\n'
+			local writelogs = '-- wxnters IY Chat logs for "'..placeName..'"\n'
 			for _, child in pairs(scroll_2:GetChildren()) do
 				writelogs = writelogs..'\n'..child.Text
 			end
@@ -4494,9 +4527,9 @@ CMDs[#CMDs + 1] = {NAME = 'guidelete', DESC = 'Enables backspace to delete GUI'}
 CMDs[#CMDs + 1] = {NAME = 'unguidelete / noguidelete', DESC = 'Disables guidelete'}
 CMDs[#CMDs + 1] = {NAME = 'hideiy', DESC = 'Hides the main IY GUI'}
 CMDs[#CMDs + 1] = {NAME = 'showiy / unhideiy', DESC = 'Shows IY again'}
-CMDs[#CMDs + 1] = {NAME = 'keepiy', DESC = 'Auto execute IY when you teleport through servers'}
-CMDs[#CMDs + 1] = {NAME = 'unkeepiy', DESC = 'Disable keepiy'}
-CMDs[#CMDs + 1] = {NAME = 'togglekeepiy', DESC = 'Toggles keepiy'}
+CMDs[#CMDs + 1] = {NAME = 'keepwiy', DESC = 'Auto execute WIY when you teleport through servers'}
+CMDs[#CMDs + 1] = {NAME = 'unkeepwiy', DESC = 'Disable keepwiy'}
+CMDs[#CMDs + 1] = {NAME = 'togglekeepwiy', DESC = 'Toggles keepwiy'}
 CMDs[#CMDs + 1] = {NAME = 'removeads / adblock', DESC = 'Automatically removes ad billboards'}
 CMDs[#CMDs + 1] = {NAME = 'savegame / saveplace', DESC = 'Uses saveinstance to save the game'}
 CMDs[#CMDs + 1] = {NAME = 'clearerror', DESC = 'Clears the annoying box and blur when a game kicks you'}
@@ -6484,7 +6517,7 @@ end)
 
 local TeleportCheck = false
 Players.LocalPlayer.OnTeleport:Connect(function(State)
-	if KeepInfYield and (not TeleportCheck) and queueteleport then
+	if KeepWInfYield and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
 		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()")
 	end
@@ -6555,29 +6588,29 @@ addcmd('discord', {'support', 'help'}, function(args, speaker)
 	end
 end)
 
-addcmd('keepiy', {}, function(args, speaker)
+addcmd('keepwiy', {}, function(args, speaker)
 	if queueteleport then
-		KeepInfYield = true
-		notify('KeepIY','Infinite Yield will now run after you teleport')
+		KeepWInfYield = true
+		notify('KeepWIY','wxnters IY will now run after you teleport')
 		updatesaves()
 	else
 		notify('Incompatible Exploit','Your exploit does not support this command (missing queue_on_teleport)')
 	end
 end)
 
-addcmd('unkeepiy', {}, function(args, speaker)
+addcmd('unkeepwiy', {}, function(args, speaker)
 	if queueteleport then
-		KeepInfYield = false
-		notify('KeepIY','Infinite Yield will no longer run after you teleport')
+		KeepWInfYield = false
+		notify('KeepWIY','wxnters IY will no longer run after you teleport')
 		updatesaves()
 	else
 		notify('Incompatible Exploit','Your exploit does not support this command (missing queue_on_teleport)')
 	end
 end)
 
-addcmd('togglekeepiy', {}, function(args, speaker)
+addcmd('togglekeepwiy', {}, function(args, speaker)
 	if queueteleport then
-		KeepInfYield = not KeepInfYield
+		KeepWInfYield = not KeepWInfYield
 		updatesaves()
 	else
 		notify('Incompatible Exploit','Your exploit does not support this command (missing queue_on_teleport)')
@@ -12631,8 +12664,8 @@ addcmd("jerk", {}, function(args, speaker)
 	if not humanoid or not backpack then return end
 
 	local tool = Instance.new("Tool")
-	tool.Name = "Jerk Off"
-	tool.ToolTip = "in the stripped club. straight up \"jorking it\" . and by \"it\" , haha, well. let's justr say. My peanits."
+	tool.Name = "goon"
+	tool.ToolTip = "jerk it off"
 	tool.RequiresHandle = false
 	tool.Parent = backpack
 
@@ -13275,6 +13308,7 @@ task.spawn(function()
         TweenService:Create(IntroBackground, OutInfo, {BackgroundTransparency = 1}):Play()
         Credits:TweenPosition(UDim2.new(0, 0, 0.9, 30), "Out", "Quart", 0.2)
         task.wait(0.2)
+        notify("Welcome", "Welcome to wxnter's IY! This is a modded version of Infinite Yield.")
     end)
     Logo:Destroy()
     Credits:Destroy()
