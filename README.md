@@ -1,5 +1,5 @@
 # wxnter's infinite yield
-The best command line script for roblox, in my branding.
+The best command line script for Roblox, in my branding.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/wxnterWIY/wxnter-s-infinite-yield/master/source"))()
@@ -17,6 +17,3 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/wxnterWIY/wxnter-s-in
 
 ## Usage
 You can learn how to use all the features of this script in [the wiki](https://github.com/EdgeIY/infiniteyield/wiki)!
-
-## Contributing
-There is no specific rules on contributing (as of now) just open a [pull request](https://github.com/EdgeIY/infiniteyield/pulls) and if it checks out we will merge it!
